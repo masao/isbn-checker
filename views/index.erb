@@ -19,7 +19,6 @@
 </form>
 </div>
 <% if @isbns %>
-  <% STDERR.puts @isbns.inspect %>
   <table border="1">
     <tr>
       <th>ISBN</th><th>result</th>
@@ -35,7 +34,11 @@
 <% end %>
 <hr />
 <div id="footer">
-<address>高久雅生 (Masao Takaku)<br />
+<address>
+高久雅生 (Masao Takaku)<br>
+<a href="https://masao.jpn.org/">https://masao.jpn.org/</a>, 
+<a href="mailto:tmasao@acm.org">tmasao@acm.org</a>
+</address>
 </div>
 </body>
 </html>
