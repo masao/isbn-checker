@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja" xml:lang="ja">
+<head>
+<meta charset="utf-8" />
+<link rev="made" href="mailto:tmasao@acm.org" />
+<link rel="stylesheet" href="default.css" type="text/css" />
+<title>ISBN Checker</title>
+</head>
+<body>
+<h1>ISBN Checker</h1>
+<div class="form">
+<form action="<%=h request.script_name %>" method="POST">
+<textarea rows="20" cols="50" name="isbns">
+</textarea>
+<input type="submit" value="  Check!  " /><br>
+</form>
+</div>
+<% if @isbns %>
+  <% STDERR.puts @isbns.inspect %>
+  <table border="1">
+    <tr>
+      <th>ISBN</th><th>result</th>
+    </tr>
+    <% @isbns.each do |isbn, result| %>
+      <tr>
+      <td><%=h isbn %></td>
+      <td><%=h result %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<hr />
+<div id="footer">
+<address>高久雅生 (Masao Takaku)<br />
+</div>
+</body>
+</html>
