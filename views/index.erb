@@ -8,6 +8,16 @@
 .ok { color: green }
 .bad { color: red }
 </style>
+<script language="JavaScript" type="application/javascript">
+function select_table_and_copy(element_id) {
+  var element = document.getElementById(element_id);
+  var range = document.createRange();
+  var sel = document.getSelection();
+  sel.removeAllRanges();
+  range.selectNodeContents(element);
+  sel.addRange(range);
+}
+</script>
 </head>
 <body>
 <h1>ISBN Checker</h1>
@@ -19,7 +29,8 @@
 </form>
 </div>
 <% if @isbns %>
-  <table border="1">
+  <button onclick="javascript:select_table_and_copy('results');">select all</button>
+  <table border="1" id="results">
     <tr>
       <th>ISBN</th><th>result</th>
     </tr>
