@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.7.8"
+ruby file: ".ruby-version"
 gem "puma"
 gem "sinatra"
 gem "lisbn"
